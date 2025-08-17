@@ -11,23 +11,23 @@ int randomeNumber(int from, int to)
 	return randomeNumber;
 }
 
-void FillMatrixWithRandomeNums(int arr[3][3], short Rows, short Colomns)
+void FillMatrixWithRandomeNums(int arr[3][3], short Rows, short Columns)
 {
 	for (int C = 0; C < Rows; C++)
 	{
-		for (int R = 0; R < Colomns; R++)
+		for (int R = 0; R < Columns; R++)
 		{
 			arr[C][R] = randomeNumber(1, 100);
 		}
 	}
 }
 
-void PrintRandomeMatrix(int arr[3][3] , short Rows , short Colomns)
+void PrintRandomeMatrix(int arr[3][3] , short Rows , short Columns)
 {
 
 	for (int C = 0; C < Rows; C++)
 	{
-		for (int R = 0; R < Colomns; R++)
+		for (int R = 0; R < Columns; R++)
 		{
 			cout << setw(3) << arr[C][R] << "       ";
 		}
@@ -35,10 +35,10 @@ void PrintRandomeMatrix(int arr[3][3] , short Rows , short Colomns)
 	}
 }
 
-int SumTheRowsOfMatrix(int arr[3][3],short RowNum,short Colomns)
+int SumTheRowsOfMatrix(int arr[3][3],short RowNum,short Columns)
 {
 	int sum = 0;
-	for (short j = 0; j < Colomns; j++)
+	for (short j = 0; j < Columns; j++)
 	{
 		sum += arr[RowNum][j];
 	}
@@ -46,27 +46,25 @@ int SumTheRowsOfMatrix(int arr[3][3],short RowNum,short Colomns)
 }
 
 
-void PrintTheSumOfTheMatrix(int arr[3][3], short Rows, short Colomns)
+void PrintTheSumOfTheMatrix(int arr[3][3], short Rows, short Columns)
 {
 	cout << "The sum of the matrix: " << endl;
 	for (int j = 0; j < Rows; j++)
 	{
-		cout << "The sum of row number " << j + 1 << ": " << SumTheRowsOfMatrix(arr, j, Colomns) << endl;
+		cout << "The sum of row number " << j + 1 << ": " << SumTheRowsOfMatrix(arr, j, Columns) << endl;
 	}
 }
 
 int main()
 {
 	srand((unsigned)time(NULL));
+	
 	int arr[3][3];
 	FillMatrixWithRandomeNums(arr, 3, 3);
-  PrintRandomeMatrix(arr,3,3);
+    PrintRandomeMatrix(arr,3,3);
 	PrintTheSumOfTheMatrix(arr, 3, 3);
 
     system("pause>0");
-
-
-
 
 
 	return 0;
