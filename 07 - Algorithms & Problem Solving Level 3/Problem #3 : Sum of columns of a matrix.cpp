@@ -35,7 +35,7 @@ void PrintRandomeMatrix(int arr[3][3] , short Rows , short Columns)
 	}
 }
 
-int SumTheRowsOfMatrix(int arr[3][3],short Rows,short ColumnsNum)
+int SumTheColumnsOfMatrix(int arr[3][3],short Rows,short ColumnsNum)
 {
 	int sum = 0;
 	for (short j = 0; j < Rows; j++)
@@ -46,12 +46,12 @@ int SumTheRowsOfMatrix(int arr[3][3],short Rows,short ColumnsNum)
 }
 
 
-void PrintSumOfTheMatrixColumns(int arr[3][3], short Rows, short Columns)
+void PrintTheSumOfMatrixColumns(int arr[3][3], short Rows, short Columns)
 {
-	cout << "The sum of the matrix: " << endl;
+	cout << "The sum of the matrix: " << endl << endl;
 	for (int j = 0; j < Rows; j++)
 	{
-		cout << "The sum of column number " << j + 1 << ": " << SumTheRowsOfMatrix(arr, Rows, j) << endl;
+		cout << "The sum of column number " << j + 1 << ": " << SumTheColumnsOfMatrix(arr, Rows, j) << endl;
 	}
 }
 
@@ -60,8 +60,10 @@ int main()
 	srand((unsigned)time(NULL));
 	int arr[3][3];
 	FillMatrixWithRandomeNums(arr, 3, 3);
-  PrintRandomeMatrix(arr,3,3);
-	PrintSumOfTheMatrixColumns(arr, 3, 3);
+	cout << "Tha matrix elements: \n" << "-----------------------------------\n";
+    PrintRandomeMatrix(arr,3,3);
+	cout << "-----------------------------------\n";
+	PrintTheSumOfMatrixColumns(arr, 3, 3);
 
     system("pause>0");
 
