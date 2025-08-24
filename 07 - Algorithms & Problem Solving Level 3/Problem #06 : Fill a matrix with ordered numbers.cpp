@@ -1,4 +1,3 @@
-#include <ctime>
 #include <iostream>
 #include <iomanip>
 #include <array>
@@ -36,8 +35,7 @@ int main()
 {
 	srand((unsigned)time(NULL));
 	int arr[3][3];
-	int arrSum[3];
-
+	
 	FillMatrixWithOrderedNums(arr, 3, 3);
 	cout << "Matrix Elements: \n" << "------------------------------\n";
 	PrintOrderedMatrix(arr, 3, 3);
