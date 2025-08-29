@@ -25,7 +25,7 @@ void FillMatrixWithRandomeNums(int arr[3][3], short Rows, short Columns)
 }
 
 
-bool IsIdentityMatrix(int arr[3][3], short Rows, short Columns)
+bool IsScalarMatrix(int arr[3][3], short Rows, short Columns)
 {
 	for (short i = 0; i < Rows; i++)
 	{
