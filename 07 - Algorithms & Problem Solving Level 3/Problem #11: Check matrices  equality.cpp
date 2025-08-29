@@ -70,7 +70,7 @@ int main()
 
 	FillMatrixWithRandomeNums(arr2, 3, 3);
 	cout << "Matrix 2 Elements: \n" << "------------------------------\n";
-	PrintMatrix(arr, 3, 3);
+	PrintMatrix(arr2, 3, 3);
 	cout << "------------------------------\n";
 
 	
