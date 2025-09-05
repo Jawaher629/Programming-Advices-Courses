@@ -40,26 +40,6 @@ void PrintMatrix(int arr[3][3], short Rows, short Columns)
 }
 
 
-bool IsNumExistsInMatrix(int arr[3][3], int Num, short Rows, short Columns)
-{
-	for (int i = 0; i < Rows; i++)
-	{
-		for (int j = 0; j < Columns; j++)
-		{
-			if (arr[i][j] == Num)
-			{
-
-				return true;
-			};
-		}
-	}
-	return false;
-}
-
-
-
-
-
 void PrintMinAndMaxNum (int arr[3][3], short Rows, short Columns)
 {
 	int MaxNumber = arr[0][0];
