@@ -40,21 +40,6 @@ void PrintMatrix(int arr[3][3], short Rows, short Columns)
 }
 
 
-short CountAnumberInMatrix(int arr[3][3], int Num, short Rows, short Columns)
-{
-	short count = 0;
-	for (short i = 0; i < Rows; i++)
-	{
-		for (int j = 0; j < Columns; j++)
-
-		{
-			if (arr[i][j] == Num) count++;
-		}
-	}
-	return count;
-}
-
-
 
 bool IsNumExistsInMatrix(int arr[3][3], int Num ,  short Rows, short Columns)
 {
