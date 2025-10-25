@@ -3,11 +3,6 @@
 using namespace std;
 
 
-char InvertChar(char Char1)
-{
-	return isupper(Char1) ? tolower(Char1) : toupper(Char1);
-}
-
 
 string ReadUsersString(string Message)
 {
@@ -58,8 +53,6 @@ int main()
 	cout << "Sentence's letters count: " << Sent1.length() << endl;
 	cout << "Capital letters count: " << CountCapitalLetter(Sent1) << endl;
 	cout << "Small letters count: " << CountSmalllLetter(Sent1) << endl;
-
-
 
 
 	system("pause>0");
