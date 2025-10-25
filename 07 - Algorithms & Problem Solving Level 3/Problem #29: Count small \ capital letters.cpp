@@ -13,11 +13,6 @@ string ReadUsersString(string Message)
 }
 
 
-int CountStringLetter(string Sentence1)
-{
-	return Sentence1.length();
-}
-
 short CountCapitalLetter(string Sent)
 {
 	short Counter = 0;
