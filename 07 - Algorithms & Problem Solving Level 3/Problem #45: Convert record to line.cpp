@@ -40,7 +40,7 @@ stClientData GetClientData()
 void PrintClientInfo(stClientData  ClientInfo , string delim)
 {
 	cout << "Client Record for saving is : \n";
-	cout << delim << ClientInfo.ClientAccountNum << delim << ClientInfo.ClientPinCode << delim << ClientInfo.ClientName << delim << ClientInfo.ClientPhoneNumber << delim << ClientInfo.AccBalance << delim;
+	cout << ClientInfo.ClientAccountNum << delim << ClientInfo.ClientPinCode << delim << ClientInfo.ClientName << delim << ClientInfo.ClientPhoneNumber << delim << ClientInfo.AccBalance << delim;
 }
 
 
