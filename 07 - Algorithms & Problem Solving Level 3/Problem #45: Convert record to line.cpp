@@ -2,7 +2,6 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "My_Input_Lib.h"
 using namespace std;
 
 struct stClientData
@@ -11,11 +10,9 @@ struct stClientData
 	string ClientPinCode = "";
 	string ClientName = "";
 	string ClientPhoneNumber = "";
-	long double AccBalance = 0;
-
-
-
+	double AccBalance = 0;
 };
+
 
 stClientData GetClientData()
 {
@@ -39,25 +36,88 @@ stClientData GetClientData()
 	return ClientInfo;
 }
 
-void PrintClientInfo(stClientData ClientInfo)
+
+void PrintClientInfo(stClientData  ClientInfo , string delim)
 {
 	cout << "Client Record for saving is : \n";
-
-	cout << ClientInfo.ClientAccountNum << "#// ";
-	cout << ClientInfo.ClientPinCode << "#// ";
-	cout <<"#" << ClientInfo.ClientName << "#// ";
-	cout << ClientInfo.ClientPhoneNumber << "#// ";
-	cout << ClientInfo.AccBalance << "#// ";
+	cout << delim << ClientInfo.ClientAccountNum << delim << ClientInfo.ClientPinCode << delim << ClientInfo.ClientName << delim << ClientInfo.ClientPhoneNumber << delim << ClientInfo.AccBalance << delim;
 }
 
 
 int main()
 {
-	PrintClientInfo(GetClientData());
+	PrintClientInfo(GetClientData(), " #//# ");
+
+	system("pause>0");
+	return 0;
+}
+//Dr. Abu Hadhoud solution:
+
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+
+struct stClientData
+{
+	string ClientAccountNum = "";
+	string ClientPinCode = "";
+	string ClientName = "";
+	string ClientPhoneNumber = "";
+	double AccBalance = 0;
+
+};
+
+stClientData GetNewClientData()
+{
+	stClientData ClientInfo;
+	cout << "Enter account number: ";
+	cin.ignore(1, '\n');
+	getline(cin, ClientInfo.ClientAccountNum);
+
+	cout << "Enter the pin code: ";
+	cin.ignore(1, '\n');
+	getline(cin, ClientInfo.ClientPinCode);
+
+	cout << "Enter name: ";
+	cin.ignore(1, '\n');
+	getline(cin,ClientInfo.ClientName);
+
+	cout << "Enter Phone Number: ";
+	cin.ignore(1, '\n');
+	getline(cin, ClientInfo.ClientPhoneNumber);
+
+	cout << "Enter account balance: ";
+	cin.ignore(1, '\n');
+	cin >> ClientInfo.AccBalance;
+
+	return ClientInfo;
+}
+
+
+
+
+
+string PrintClientInfo(stClientData ClientInfo , string delim)
+{
+	string stClientRecord = "";
+	
+	stClientRecord += ClientInfo.ClientAccountNum + delim;
+	stClientRecord += ClientInfo.ClientPinCode + delim;
+	stClientRecord += ClientInfo.ClientName + delim;
+	stClientRecord += ClientInfo.ClientPhoneNumber + delim;
+	stClientRecord += to_string(ClientInfo.AccBalance) + delim;
+
+	return stClientRecord;
+}
+
+
+int main()
+{
+	stClientData Client = GetNewClientData();
+	cout << "Client record for saving is: \n" << PrintClientInfo(Client, " #//# ");
 
 	
 	system("pause>0");
 	return 0;
 }
-
-//Dr. Abu Hadhoud solution:
