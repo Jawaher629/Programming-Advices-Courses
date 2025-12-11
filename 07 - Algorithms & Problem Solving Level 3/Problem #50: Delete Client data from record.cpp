@@ -5,7 +5,7 @@
 #include <iomanip>
 using namespace std;
 
-const string ClientsFileName = "ClientsDataFile.txt";
+const string ClientsFileName = "ClientsDataFile2.txt";
 struct stClientData
 {
 	string ClientAccountNum = "";
@@ -64,11 +64,11 @@ string ConvertRecordToLine(stClientData ClientRecord, string delim)
 {
 	string ClientDataLine = "";
 
-	ClientDataLine = ClientRecord.ClientAccountNum + delim;
-	ClientDataLine = ClientRecord.ClientPinCode + delim;
-	ClientDataLine = ClientRecord.ClientName + delim;
-	ClientDataLine = ClientRecord.ClientPhoneNumber + delim;
-	ClientDataLine = to_string(ClientRecord.AccBalance) + delim;
+	ClientDataLine += ClientRecord.ClientAccountNum + delim;
+	ClientDataLine += ClientRecord.ClientPinCode + delim;
+	ClientDataLine += ClientRecord.ClientName + delim;
+	ClientDataLine += ClientRecord.ClientPhoneNumber + delim;
+	ClientDataLine += to_string(ClientRecord.AccBalance) + delim;
 
 	return ClientDataLine;
 }
@@ -85,7 +85,7 @@ vector <stClientData> LoadClientDataFromFile(string FileName)
 		stClientData Client;
 		while (getline(ClientsDataFile, SingleLine))
 		{
-			Client = ConvertLineDataToStruct(SingleLine, "#//#");
+			Client = ConvertLineDataToStruct(SingleLine, "///");
 			vClients.push_back(Client);
 		}
 		ClientsDataFile.close();
@@ -140,7 +140,7 @@ vector <stClientData> SaveDataLineToFile(string FileName, vector <stClientData> 
 		{
 			if (Cl.MarkForDelet == false)
 			{
-				DataLine = ConvertRecordToLine(Cl,"#//#");
+				DataLine = ConvertRecordToLine(Cl,"///");
 				ClientsDataFile << DataLine << endl;
 			}
 		}
@@ -202,7 +202,7 @@ bool DeleteClientDataByAccountNum(string Accountnum, vector <stClientData> vClie
 	}
 	else
 	{
-		cout << "Client with " << Accountnum << " account number is NOT found!\n\n";
+		cout << "Client with (" << Accountnum << ") account number is NOT found!\n\n";
 		return false;
 	}
 }
