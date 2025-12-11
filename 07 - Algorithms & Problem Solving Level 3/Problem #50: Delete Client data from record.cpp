@@ -149,38 +149,6 @@ vector <stClientData> SaveDataLineToFile(string FileName, vector <stClientData> 
 	return vClients;
 }
 
-void PrintOneClientData(stClientData Client)
-{
-	cout << "|" << setw(40) << left << Client.ClientName;
-	cout << "|" << setw(15) << left << Client.ClientAccountNum;
-	cout << "|" << setw(10) << left << Client.ClientPinCode;
-	cout << "|" << setw(12) << left << Client.ClientPhoneNumber;
-	cout << "|" << setw(12) << left << Client.AccBalance;
-}
-
-void PrintAllClients(vector <stClientData> Client)
-{
-	cout << "\n\t\t\t\t\t\t List of (" << Client.size() << ") Clients(s)\n";
-
-	cout << "--------------------------------------------------------------------------------------------------\n";
-
-	cout << "|" << setw(40) << left << "Client Name";
-	cout << "|" << setw(15) << left << "Account Number";
-	cout << "|" << setw(10) << left << "Pin Code";
-	cout << "|" << setw(12) << left << "Phone Number";
-	cout << "|" << setw(12) << left << "Account Balance";
-
-	cout << "\n--------------------------------------------------------------------------------------------------\n";
-
-	for (stClientData Clients : Client)
-	{
-		PrintOneClientData(Clients);
-		cout << endl;
-	}
-	cout << "--------------------------------------------------------------------------------------------------\n";
-
-}
-
 bool DeleteClientDataByAccountNum(string Accountnum, vector <stClientData> vClients)
 {
 	stClientData ClientData; char Confermation = 'N';
