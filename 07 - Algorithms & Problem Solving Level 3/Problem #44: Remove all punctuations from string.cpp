@@ -33,7 +33,7 @@ string RemovePuncuations(string Sent1)
 
 int main()
 {
-	string Sent = "Here is the fucking SA, It's such a shitty countre. ma god help us to get out of here!!!";
+	string Sent = ReadUserString();
 	cout << RemovePuncuations(Sent);
 
 	system("pause>0");
