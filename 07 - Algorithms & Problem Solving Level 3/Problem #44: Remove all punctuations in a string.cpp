@@ -7,18 +7,6 @@
 #include <iomanip>
 using namespace std;
 
-const string ClientsFileName = "ClientsDataFile2.txt";
-struct stClientData
-{
-	string ClientAccountNum = "";
-	string ClientPinCode = "";
-	string ClientName = "";
-	string ClientPhoneNumber = "";
-	double AccBalance = 0;
-	bool MarkForDelet = false;
-	bool MarkForUpdate = false;
-};
-
 string ReadUserString()
 {
 	string Sentence = "";
