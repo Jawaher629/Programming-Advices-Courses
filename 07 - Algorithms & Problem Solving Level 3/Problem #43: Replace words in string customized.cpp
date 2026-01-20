@@ -96,7 +96,7 @@ int main()
 	string StringToReplace = ReadUserString("Enter string to replace: ");
 	string TheReplacement = ReadUserString("Enter the replacement string: ");
 
-	cout << ReplaceAWordInASentence(Sentence1, StringToReplace, TheReplacement);
+	cout << ReplaceAWordInASentence(Sentence1, StringToReplace, TheReplacement, false);
 	
 	system("pause>0");
 	return 0;
