@@ -3,22 +3,22 @@
 using namespace std;
 
 
-void PrintFebonacciSeiress(int Num)
+void PrintFibonacciSeiress(int Num)
 {
-	int Prev1 = 1, Prev2 = 0 , FebAnswer = 0;
-	cout << "Febonacci Series: 1,  ";
+	int Prev1 = 1, Prev2 = 0 , FibAnswer = 0;
+	cout << "Fibonacci Series: 1,  ";
 	for (int i = 2; i <= Num; ++i)
 	{
-		FebAnswer = Prev1 + Prev2;
-		cout  << FebAnswer << ",  ";
+		FibAnswer = Prev1 + Prev2;
+		cout  << FibAnswer << ",  ";
 		Prev2 = Prev1;
-		Prev1 = FebAnswer;
+		Prev1 = FibAnswer;
 	}
 }
 
 int main()
 {
-	PrintFebonacciSeiress(10);
+	PrintFibonacciSeiress(10);
 	
 	return 0;
 }
