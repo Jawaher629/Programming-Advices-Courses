@@ -44,6 +44,7 @@ void CountEachWordInString(string Sent1, string delim)
 	}
 	if (Sent1 != "")
 	cout << "Words count: " << counter << " words";
+	counter++;
 }
 
 int main()
