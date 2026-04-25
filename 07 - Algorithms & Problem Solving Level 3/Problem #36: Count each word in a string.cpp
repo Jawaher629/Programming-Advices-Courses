@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <iomanip>
 using namespace std;
 
 string ReadStringFromUser(string Message)
@@ -11,7 +10,7 @@ string ReadStringFromUser(string Message)
 	return Sent;
 }
 
-void PrintEachWordInString(string Sent1, string delim)
+void PrintEachWordInStringAndCount(string Sent1, string delim)
 {
 	short counter = 0;
 	short pos = 0;
@@ -29,6 +28,24 @@ void PrintEachWordInString(string Sent1, string delim)
 		cout << "- " << Sent1 << endl;
 	cout << "\nWords count: " << counter << "words.";
 }
+
+
+void CountEachWordInString(string Sent1, string delim)
+{
+	short counter = 0;
+	short pos = 0;
+	string sWord;
+	while ((pos = Sent1.find(delim)) != std::string::npos)
+	{
+		sWord = Sent1.substr(0, pos);
+		if (sWord != "")
+		Sent1.erase(0, pos + delim.length());
+		counter++;
+	}
+	if (Sent1 != "")
+	cout << "Words count: " << counter << " words";
+}
+
 int main()
 {
 	string Sent1 = ReadStringFromUser("Enter your sentence: ");
