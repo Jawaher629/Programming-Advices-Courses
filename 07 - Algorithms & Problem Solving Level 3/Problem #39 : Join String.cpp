@@ -35,11 +35,11 @@ void PrintWordsFromVec(vector <string> vWords)
 		cout << "- " << i << endl;
 }
 
-string JoinFunc(vector<string> vWords)
+string JoinFunc(vector<string> vWords,string Separator)
 {
 	string Sent1 = "";
 	for (string s : vWords)
-		Sent1 += s + " ";
+		Sent1 += s + Separator;
 
 	return Sent1;
 }
@@ -49,7 +49,7 @@ int main()
 	string Sent1 = ReadStringFromUser("Enter your sentence: ");
 	vector <string > vWords = SplitString(Sent1, " ");
 	cout << "Spilit sentence: "; PrintWordsFromVec(vWords);
-	cout << "Join sentence: " << JoinFunc(vWords);
+	cout << "Join sentence: " << JoinFunc(vWords,"##");
 
 	return 0;
 }
