@@ -41,7 +41,8 @@ string JoinFunc(vector<string> vWords,string Separator)
 	for (string s : vWords)
 		Sent1 += s + Separator;
 
-	return Sent1;
+	return  Sent1.substr(0, Sent1.length() - Separator.length());
+
 }
 
 int main()
