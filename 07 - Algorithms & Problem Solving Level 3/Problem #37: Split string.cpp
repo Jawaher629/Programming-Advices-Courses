@@ -20,8 +20,8 @@ vector <string> SplitString(string Sent1, string delim)
 	{
 		sWord = Sent1.substr(0, pos);
 		if (sWord != "")
+			vWords.push_back(sWord);
 		Sent1.erase(0, pos + delim.length());
-		vWords.push_back(sWord);
 	}
 	if (Sent1 != "")
 		vWords.push_back(Sent1);
