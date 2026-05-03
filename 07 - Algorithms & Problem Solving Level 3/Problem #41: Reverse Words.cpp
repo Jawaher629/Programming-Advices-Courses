@@ -3,65 +3,55 @@
 #include <vector>
 using namespace std;
 
-string ReadUserString()
+string ReadStringFromUser(string Message)
 {
-	string Sentence = "";
-	cout << "Enter Your Sentence: ";
-	getline(cin, Sentence);
-
-	return Sentence;
+	cout << Message;
+	string Sent = "";
+	getline(cin, Sent);
+	return Sent;
 }
 
-
-vector <string> SplitString(string Sent1, string Delim)
+vector <string> SplitString(string Sent1, string delim)
 {
-	vector <string> vSentence;
-
-	string sWord = "";
-	short Pos = 0;
-
-	while ((Pos = Sent1.find(Delim)) != std::string::npos)
+	vector <string> vWords;
+	short pos = 0;
+	string sWord;
+	while ((pos = Sent1.find(delim)) != std::string::npos)
 	{
-		sWord = Sent1.substr(0, Pos);
+		sWord = Sent1.substr(0, pos);
 		if (sWord != "")
-		{
-			vSentence.push_back(sWord);
-		}
-		Sent1.erase(0,Pos + Delim.length());
+			vWords.push_back(sWord);
+		Sent1.erase(0, pos + delim.length());
 	}
-
 	if (Sent1 != "")
-	{
-		vSentence.push_back(Sent1);
-	}
-
-	return vSentence;
+		vWords.push_back(Sent1);
+	return vWords;
 }
 
 
-string ReverseWordsInAString(string Sent1)
+string ReverseWordsInString(string Sent1)
 {
-	vector<string> vString ;
-	vString = SplitString(Sent1, " ");
-	string Sent2 = "";
+	string RevSent = "";
+	vector <string> vWords = SplitString(Sent1," ");
 
-	vector<string>::iterator iter = vString.end();
-	while (iter != vString.begin())
+	vector <string>::iterator iterSent = vWords.end();
+	while (iterSent != vWords.begin())
 	{
-		--iter;
-		Sent2 += *iter + " ";
+		iterSent--;
+		RevSent += *iterSent + " ";
 	}
-	Sent2 = Sent2.substr(0, Sent2.length() - 1);
 
-	return Sent2;
+
+	return RevSent.substr(0, RevSent.length() - 1);
+
 }
 
 int main()
 {
-	string Sentence1 = ReadUserString();
-	cout << "\nYour string after reverse:\n";
-	cout << ReverseWordsInAString(Sentence1);
+	string Sentence1 = ReadStringFromUser("Enter your sentence to reverse: ");
 
-	system("pause>0");
+	cout << "Sentence after revers: " << ReverseWordsInString(Sentence1);
+
+
 	return 0;
 }
