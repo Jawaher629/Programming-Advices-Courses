@@ -1,7 +1,65 @@
+// My Solution:
 #include <iostream>
 #include <string>
 #include <vector>
+using namespace std;
 
+string ReadStringFromUser(string Message)
+{
+	cout << Message;
+	string Sent = "";
+	getline(cin, Sent);
+	return Sent;
+}
+
+vector <string> SplitString(string Sent1, string delim)
+{
+	vector <string> vWords;
+	short pos = 0;
+	string sWord;
+	while ((pos = Sent1.find(delim)) != std::string::npos)
+	{
+		sWord = Sent1.substr(0, pos);
+		if (sWord != "")
+			vWords.push_back(sWord);
+		Sent1.erase(0, pos + delim.length());
+	}
+	if (Sent1 != "")
+		vWords.push_back(Sent1);
+	return vWords;
+}
+
+string ReplaceWordInString(string Sent1, string TheReplace, string TheReplacement)
+{
+	vector <string>vSentence = SplitString(Sent1, " ");
+	string NewSent = "";
+	for (string s : vSentence)
+	{
+		if (s == TheReplace)
+			s = TheReplacement;
+		NewSent += s + " ";
+		
+	}
+	return NewSent;
+}
+
+
+int main()
+{
+	string Sentence1 = ReadStringFromUser("Enter your sentence : "),TheReplace,TheReplacement;
+	cout << "Enter the word to replace: ";
+	cin >> TheReplace;
+	cout << "Enter the word the replacement: ";
+	cin >> TheReplacement;
+	cout << "New sentence is: " << ReplaceWordInString(Sentence1, TheReplace, TheReplacement);
+
+	return 0; 
+}
+
+//Dr.Abu-Hadhoud solution:
+#include <iostream>
+#include <string>
+#include <vector>
 using namespace std;
 
 string ReadUserString(string Messege)
@@ -38,14 +96,6 @@ vector <string> SplitString(string Sent1, string Delim)
 	return vSentence;
 }
 
-string UpperCaseAllString(string Sentence1)
-{
-	for (short i = 0; i < Sentence1.length(); i++)
-	{
-		Sentence1[i] = toupper(Sentence1[i]);
-	}
-	return Sentence1;
-}
 
 string LowerCaseAllString(string Sentence1)
 {
