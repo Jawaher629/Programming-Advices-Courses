@@ -131,14 +131,11 @@ string ReplaceAWordInASentence(string Sent1, string StringToRplace, string TheRe
 			else
 			{
 				if (LowerCaseAllString(st) == LowerCaseAllString(StringToRplace))
-					st == StringToRplace;
+					st = StringToRplace;
 			}
 	}
 	return JoinString(vSentence, " ");
 }
-
-
-
 
 int main()
 {
