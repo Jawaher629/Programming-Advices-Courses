@@ -47,7 +47,7 @@ void SaveRecordToFile(string FileName,string ClientInfoLine)
 	fClientsInfoFile.open(FileName, ios::out | ios::app);
 	if (fClientsInfoFile.is_open())
 	{
-		fClientsInfoFile << ClientInfoLine;
+		fClientsInfoFile << ClientInfoLine << endl;
 
 		fClientsInfoFile.close();
 	}
