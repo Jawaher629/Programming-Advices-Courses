@@ -81,7 +81,7 @@ stClientData ReadNewClientData()
 		getline(cin >> ws, ClientData.AccountNumber);
 		while (CheckAccountExistsByAccNumber(ClientsFileName,ClientData.AccountNumber))
 		{
-			cout << "Client With Account Number [" << ClientData.AccountNumber << "] Is already Exists,Try Another One: \n";
+			cout << "Client With Account Number [" << ClientData.AccountNumber << "] Is Already Exists,Try Another One: \n";
 			getline(cin >> ws, ClientData.AccountNumber);
 		}
 		cout << "Enter Pin code: ";
