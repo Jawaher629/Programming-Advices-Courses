@@ -98,10 +98,11 @@ bool IsLeapYear(int Number)
 
 	 Date.Year = Now->tm_year + 1900;
 	 Date.Month = Now->tm_mon + 1;
-	 Date.Day = Now->tm_wday;
+	 Date.Day = Now->tm_mday;
 
 	 return Date;
  }
+
 int main()
 {
 	cout << "Enter your birthday date: \n";
