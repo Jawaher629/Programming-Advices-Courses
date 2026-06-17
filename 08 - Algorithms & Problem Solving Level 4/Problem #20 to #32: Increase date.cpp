@@ -57,61 +57,6 @@ bool IsLeapYear(int Number)
 	 return Date;
  }
 
- bool IsDay1BeforDay2(stDate Date1, stDate Date2)
- {
-	 return ((Date1.Year < Date2.Year) ? true : (Date1.Year == Date2.Year) ? (Date1.Month < Date2.Month) ? true : (Date1.Month == Date2.Month) ? (Date1.Day < Date2.Day) : false : false);
- }
-
- stDate IncreaseDateByOneDay(stDate Date)
- {
-	 if (IsLastDayInMonth(Date) && IsLastMonthInYear(Date))
-	 {
-		 Date.Day = 1;
-		 Date.Month = 1;
-		 Date.Year++;
-	 }
-	 else if (IsLastDayInMonth(Date))
-	 {
-		 Date.Day = 1;
-		 Date.Month++;
-	 }
-	 else
-		 Date.Day++;
-	 return Date;
- }
-
- void SwapDates(stDate& Date1, stDate& Date2)
- {
-	 stDate TempDate;
-	 TempDate = Date1;
-
-	 Date1 = Date2;
-
-	 Date2 = TempDate;
- }
-
- int DiffInDays(stDate Date1, stDate Date2, bool IncludeLastDate = false)
- {
-	 
-	 int Counter = 0;
-	 int SapFlagValue = 1;
-	 if (!IsDay1BeforDay2(Date1,Date2))
-	 {
-		SwapDates(Date1,Date2);
-		SapFlagValue = - 1;
-		
-	 }
-	 while (IsDay1BeforDay2(Date1, Date2))
-	 {
-		 Counter++;
-		 Date1 = IncreaseDateByOneDay(Date1);
-
-	 }
-
-	
-	 return (IncludeLastDate ? ++Counter * SapFlagValue : Counter * SapFlagValue);
- }
-
  short DaysFrombeginningOfYear(short Year, short Month, short Day)
  {
 	 short counter = 0;
