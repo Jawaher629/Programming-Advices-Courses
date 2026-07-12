@@ -1,5 +1,4 @@
 // My solution:
-#pragma warning(disable : 4996)
 #include <iostream>
 
 using namespace std;
@@ -373,37 +372,43 @@ int main()
 	cout << "\n\n";
 
 	Date1 = IncreaseDateByOneDay(Date1);
-	cout << "1 - Date after adding one day: "  << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+	cout << "01 - Date after adding one day: "  << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
 
 	Date1 = AddXdaysToDate( Date1,10);
-	cout << "2 - Date after adding " << 10 << " Days: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+	cout << "02 - Date after adding " << 10 << " Days: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
 
 	Date1 = AddOneWeekToDate(Date1),
-	cout << "3 - Date after adding one week: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+	cout << "03 - Date after adding one week: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
 
 	Date1 = AddXWeeksToDate(Date1, 10);
-	cout << "4 - Date after adding 10 weeks: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+	cout << "04 - Date after adding 10 weeks: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
 
+	Date1 = AddOneMonthToDate(Date1);
+	cout << "05 - Date after adding one month: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+
+	Date1 = AddXMonthsToDate(Date1,10);
+	cout << "06 - Date after adding 10 months: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+	
 	Date1 = AddOneYearToDate(Date1);
-	cout << "5 - Date after adding one year: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+	cout << "07 - Date after adding one year: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
 
 	Date1 = AddXYearsToDate(Date1,10);
-	cout << "6 - Date after adding 10 years: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+	cout << "08 - Date after adding 10 years: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
 
 	Date1 = AddXYearsToDateFaster(Date1, 10);
-	cout << "7 - Date after adding 10 years FASTER: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+	cout << "09 - Date after adding 10 years FASTER: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
 
 	Date1 = AddOneDecadeToDate(Date1);
-	cout << "8 - Date after adding one decade: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+	cout << "10 - Date after adding one decade: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
 
 	Date1 = AddXDecadesToDate(Date1, 10);
-	cout << "9 - Date after adding 10 decades: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+	cout << "11 - Date after adding 10 decades: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
 
 	Date1 = AddOneCenturyToDate(Date1);
-	cout << "10 - Date after adding one century: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+	cout << "12 - Date after adding one century: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
 
 	Date1 = AddOneMillenniumToDate(Date1);
-	cout << "11 - Date after adding one millennium: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
+	cout << "13 - Date after adding one millennium: " << Date1.Day << "/" << Date1.Month << "/" << Date1.Year << endl;
 
 	system("pause>0");
 	return 0;
