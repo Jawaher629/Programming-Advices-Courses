@@ -142,7 +142,7 @@ int main()
 {
 	stPeriod Period = TakePeriodFromUser();
 
-	cout << "Period length in days: " << PeriodLengthInDays(Period);
+	cout << "Period length in days: " << PeriodLengthInDays(Period) << " days.\n";
 	system("pause>0");
 	return 0;
 } 
