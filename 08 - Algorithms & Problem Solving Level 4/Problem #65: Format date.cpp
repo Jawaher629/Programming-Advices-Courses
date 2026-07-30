@@ -1,4 +1,4 @@
-//My solution : use enums to take user's format choise
+//My solution : use enums to take user's format choice
 #include <iostream>
 #include <string>
 #include <vector>
