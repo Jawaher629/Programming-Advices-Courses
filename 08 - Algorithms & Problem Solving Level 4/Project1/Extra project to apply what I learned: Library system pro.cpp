@@ -32,7 +32,6 @@ enum enPermissionManagement { All = -1, pViewBooksList = 1, pAddNewBook = 2, pDe
 
 const string BookFileName = "BookFile2.txt";
 const string UserFileName = "UsersFile.txt";
-const string AuthorsFileName = "AuthersFile.txt";
 
 void PrintMainMenu();
 void RunLibrarySystem(enMenuchoices UserChoice);
@@ -236,18 +235,20 @@ void PrintUserManagementMenu()
 {
 	if (!CheckAccessPermission(enPermissionManagement::pManageUsers))
 		ShowAccessDeniedScreen();
+	else
+	{
+		cout << "\n ===================================================================================================\n";
+		cout << "\t\t\t\t\t User Management Screen";
+		cout << "\n ===================================================================================================\n";
 
-	cout << "\n ===================================================================================================\n";
-	cout << "\t\t\t\t\t User Management Screen";
-	cout << "\n ===================================================================================================\n";
-
-	cout << "\t[1] View Users List.\n";
-	cout << "\t[2] Add New User.\n";
-	cout << "\t[3] Delete User.\n";
-	cout << "\t[4] Update User Information.\n";
-	cout << "\t[5] Find User.\n";
-	cout << "\t[6] Go Backe To Main Menu.\n";
-	PerformUserManagement(enUserManagement(ReadUserInt("Enter your choise: ")));
+		cout << "\t[1] View Users List.\n";
+		cout << "\t[2] Add New User.\n";
+		cout << "\t[3] Delete User.\n";
+		cout << "\t[4] Update User Information.\n";
+		cout << "\t[5] Find User.\n";
+		cout << "\t[6] Go Backe To Main Menu.\n";
+		PerformUserManagement(enUserManagement(ReadUserInt("Enter your choise: ")));
+	}
 
 }
 
@@ -625,19 +626,22 @@ void ShowAddNewBookscreen()
 {
 	if (!CheckAccessPermission(enPermissionManagement::pAddNewBook))
 		ShowAccessDeniedScreen();
-	cout << "\n---------------------------------------------------------------------------\n";
-	cout << "\n--------------------------[Add New Book Screen]----------------------------\n";
-	cout << "\n---------------------------------------------------------------------------\n";
+	else
+	{
+		cout << "\n---------------------------------------------------------------------------\n";
+		cout << "\n--------------------------[Add New Book Screen]----------------------------\n";
+		cout << "\n---------------------------------------------------------------------------\n";
 
-	char AddMore = 'N';
+		char AddMore = 'N';
 
-	
+
 		do
 		{
 			AddNewBookToSystem();
 			cout << "\nDo Want To Add More Books ? y / n : ";
 			cin >> AddMore;
-	    }while (toupper(AddMore) == 'Y');
+		} while (toupper(AddMore) == 'Y');
+	}
 }
 
 void AddNewUserToSystem()
@@ -731,14 +735,17 @@ void ShowFindBookInSysScreen()
 {
 	if (!CheckAccessPermission(enPermissionManagement::pFindBook))
 		ShowAccessDeniedScreen();
-	cout << "=====================================\n\n";
-	cout << "-----------{Find Book Screen}--------\n\n";
-	cout << "=====================================\n\n";
-
-	string ISBN = ReadUserString("Enter ISBN to find book: ");
-	if (!FindUsersInSystem(ISBN))
+	else
 	{
-		cout << "Book with ISBN [" << ISBN << "] is NOT found.\n";
+		cout << "=====================================\n\n";
+		cout << "-----------{Find Book Screen}--------\n\n";
+		cout << "=====================================\n\n";
+
+		string ISBN = ReadUserString("Enter ISBN to find book: ");
+		if (!FindUsersInSystem(ISBN))
+		{
+			cout << "Book with ISBN [" << ISBN << "] is NOT found.\n";
+		}
 	}
 }
 
@@ -843,19 +850,22 @@ void ShowDeleteBookFromSysScreen()
 {
 	if (!CheckAccessPermission(enPermissionManagement::pDeleteBook))
 		ShowAccessDeniedScreen();
-	cout << "\n---------------------------------------------------------------------------\n";
-	cout << "\n--------------------------[Delete Book Screen]----------------------------\n";
-	cout << "\n---------------------------------------------------------------------------\n";
-
-	char AddMore = 'N';
-
-
-	do
+	else
 	{
-		DeleteBookFromSystem(ReadUserString("Enter ISBN: "));
-		cout << "\n\nDo you want to delete more books? y/n: ";
-		cin >> AddMore;
-	} while (toupper(AddMore) == 'Y');
+		cout << "\n---------------------------------------------------------------------------\n";
+		cout << "\n--------------------------[Delete Book Screen]----------------------------\n";
+		cout << "\n---------------------------------------------------------------------------\n";
+
+		char AddMore = 'N';
+
+
+		do
+		{
+			DeleteBookFromSystem(ReadUserString("Enter ISBN: "));
+			cout << "\n\nDo you want to delete more books? y/n: ";
+			cin >> AddMore;
+		} while (toupper(AddMore) == 'Y');
+	}
 }
 
 void ShowDeleteUserFromSysScreen()
@@ -968,19 +978,22 @@ void ShowUpdateBookInSysScreen()
 {
 	if (!CheckAccessPermission(enPermissionManagement::pUpdateBookInfo))
 		ShowAccessDeniedScreen();
-	cout << "\n---------------------------------------------------------------------------\n";
-	cout << "\n--------------------------[Update Book Screen]----------------------------\n";
-	cout << "\n---------------------------------------------------------------------------\n";
-
-	char AddMore = 'N';
-
-	vector <stBookData>vBook = LoadDataFromFile(BookFileName);
-	do
+	else
 	{
-		UpdateBookInfoInFile(ReadUserString("Enter ISBN: "), vBook);
-		cout << "\n\nDo you want to update more books? y/n: ";
-		cin >> AddMore;
-	} while (toupper(AddMore) == 'Y');
+		cout << "\n---------------------------------------------------------------------------\n";
+		cout << "\n--------------------------[Update Book Screen]----------------------------\n";
+		cout << "\n---------------------------------------------------------------------------\n";
+
+		char AddMore = 'N';
+
+		vector <stBookData>vBook = LoadDataFromFile(BookFileName);
+		do
+		{
+			UpdateBookInfoInFile(ReadUserString("Enter ISBN: "), vBook);
+			cout << "\n\nDo you want to update more books? y/n: ";
+			cin >> AddMore;
+		} while (toupper(AddMore) == 'Y');
+	}
 }
 
 void PerformUserManagement(enUserManagement AdminChoise)
@@ -1127,4 +1140,5 @@ int main()
 	
 	return 0;
 }
+
 
