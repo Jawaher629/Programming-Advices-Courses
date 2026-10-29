@@ -372,7 +372,7 @@ void ShowNormalWitdrawScreen()
 
 void GoBackToMainMenu()
 {
-	cout << "Press Any Key To Go Back To The Transaction Screen...\n";
+	cout << "Press Any Key To Go Back To The Main Screen...\n";
 	system("pause>0");
 	system("cls");
 	ShowMainMenu();
