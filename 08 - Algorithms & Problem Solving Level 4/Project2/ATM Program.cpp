@@ -455,7 +455,7 @@ void ShowMainMenu()
 	cout << "\t\t [2] Normal WithDraw." << endl;
 	cout << "\t\t [3] Deposit Screen." << endl;
 	cout << "\t\t [4] Check Balance." << endl;
-	cout << "\t\t [5] Log Out." << endl << endl;
+	cout << "\t\t [5] LogOut." << endl << endl;
 
 
 	RunATMMenu((enClientMainMenu)ReadUserMenuChoice());
