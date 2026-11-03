@@ -237,21 +237,12 @@ void PrintClientsAccountBalances()
 
 	vector <stClientData> vClientsInfo = LoadClientInfoFromFile(ClientsFileName);
 	
-	
-
-		cout << "\n________________________________________________________________________________________________________________________\n";
-		cout << "| " << left << setw(15) << "Account Number";
-		cout << "| " << left << setw(40) << "Client's Name";
-		cout << "| " << left << setw(12) << "Account Balance" << endl;
-		cout << "________________________________________________________________________________________________________________________";
-
 		for (stClientData& stClient : vClientsInfo)
 		{
 			if(stClient.AccountNumber == CurrentClient.AccountNumber)
 			{
-				cout << left << setw(18) << stClient.AccountNumber;
-				cout << left << setw(45) << stClient.ClientName;
-				cout << left << setw(12) << stClient.AccountBalance << endl;
+				
+				cout  << "Your Account Balance is: " << stClient.AccountBalance << endl;
 			}
 		}
 		cout << "\n________________________________________________________________________________________________________________________\n";
@@ -456,7 +447,6 @@ void ShowUpdateClientDataScreen()
 }
 
 
-
 void RunATMMenu(enClientMainMenu ClientChoice)
 {
 	switch (ClientChoice)
@@ -530,7 +520,8 @@ void ShowMainMenu()
 	cout << "\t\t [4] Deposit Screen." << endl;
 	cout << "\t\t [5] Check Balance." << endl;
 	cout << "\t\t [6] Update personal information." << endl;
-	cout << "\t\t [7] LogOut." << endl << endl;
+	cout << "\t\t [7] Log Out." << endl << endl;
+
 
 	RunATMMenu((enClientMainMenu)ReadUserMenuChoice());
 
@@ -564,7 +555,9 @@ void Login()
 	ShowMainMenu();
 }
 
+
 int main()
 {
 	Login();
+
 }
